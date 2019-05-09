@@ -13,12 +13,23 @@ class sence extends GuaSence {
         this.addElements(this.play)
         this.addElements(this.ball)
         this.addElements(this.blocks)
-        
-        log(this)
+        this.setInput()
     }
     update() {
         super.update()
-        this.setInput()
+        if(this.checkEndGame()) {
+            this.endGame()
+        }
+    }
+    checkEndGame() {
+        if(this.ball.y > (this.play.y + 10)) {
+            return true
+        }
+        return false
+    }
+    endGame() {
+        let end = SenceEnd.new(this.game)
+        this.game.replaceScene(end)
     }
     setInput() {
         var g = this.game
