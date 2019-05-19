@@ -19,9 +19,18 @@ class sence extends GuaSence {
 
         this.setInput()
     }
+    isEnd(){
+        if(!this.play.alive) {
+          let self = this;
+           setTimeout(function(){
+            let endSence = SenceEnd.new(self.game)
+            self.game.replaceScene(endSence)
+           },1000)
+        }
+    }
     update(){
         super.update()
-       
+        this.isEnd()
     }
     setInput(){
         var g = this.game

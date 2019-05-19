@@ -90,7 +90,7 @@ class GanGame {
         }, 1000 / window.fps)
     }
 
-    replaceScene(s){
+    lereplaceScene(s){
         this.sence = s;
     }
     imageByName(name){
