@@ -10,17 +10,18 @@ class sence extends GuaSence {
     setUp(){
         
         var g = this.game;
-        // var play = Play(g);
         this.enemysNumber = 5
         this.play = Play.new(g,'play')
         this.play.x = 140;
         this.play.y = 500;
         this.addElements(this.play)
         this.addEnemys()
+
+        this.setInput()
     }
     update(){
         super.update()
-        this.setInput()
+       
     }
     setInput(){
         var g = this.game
