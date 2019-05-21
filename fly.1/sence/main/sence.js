@@ -5,6 +5,7 @@ class sence extends GuaSence {
         super(game)
         this.enemys = []
         this.setUp()
+        this.setInput()
         
     }
     setUp(){
@@ -21,13 +22,23 @@ class sence extends GuaSence {
             this.addElements(b)
             this.bases.push(b)
         }
-
         
+    }
+    gameEnd() {
+        let endSence = SenceEnd.new(this.game)
+        this.game.replaceScene(endSence)
+    }
+    checkGameEnd() {
+        if(!this.play.alive) {
+            return true;
+        }
     }
     update(){
         super.update()
-        this.setInput()
-    }
+        if(this.checkGameEnd()) {
+            this.gameEnd()
+        }
+    }   
     setInput(){
         var g = this.game
         var self = this;

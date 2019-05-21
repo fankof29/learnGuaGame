@@ -6,6 +6,7 @@ class Bird extends guaAnimation {
         this.speed = 20
         this.vy = 0
         this.gy = 10
+        this.floot = 580
     }
     move() {
         if (this.x < 0) {
@@ -19,6 +20,7 @@ class Bird extends guaAnimation {
         }
         if (this.y > (700 - this.h)) {
             this.y = 700 - this.h
+            
         }
 
     }
@@ -39,9 +41,15 @@ class Bird extends guaAnimation {
         this.y += this.speed
         this.move()
     }
+    checkDead() {
+        if(this.y == this.floot) {
+            this.alive = false;
+        }
+        
+    }
     update() {
         super.update()
-        var h = 580
+        var h = this.floot
         this.y += this.vy
         this.vy += this.gy * 0.15
         if(this.y > h) {
@@ -51,6 +59,7 @@ class Bird extends guaAnimation {
         if(this.rotation < 45) {
             this.rotation += 3
         }
+        this.checkDead()
     }
 
 }
