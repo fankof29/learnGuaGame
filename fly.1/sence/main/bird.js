@@ -75,7 +75,7 @@ class Bird extends guaAnimation {
         if(this.rotation < 45) {
             this.rotation += 3
         }
-        // this.checkDead()
+        this.checkDead()
         this.checkCrash()
     }
 
