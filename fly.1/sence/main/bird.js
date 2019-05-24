@@ -47,6 +47,22 @@ class Bird extends guaAnimation {
         }
         
     }
+    checkPoint(e) {
+      
+        if (e.alive) {
+            if (rectIntersects(this, e) || rectIntersects(e, this)) {
+                this.alive = false
+            }
+        }
+    }
+    checkCrash() {
+        let pipes = this.sence.pipes.els;
+
+        // log('pipes',pipes)
+        for(let i of pipes){
+            this.checkPoint(i)
+        }
+    }
     update() {
         super.update()
         var h = this.floot
@@ -59,7 +75,8 @@ class Bird extends guaAnimation {
         if(this.rotation < 45) {
             this.rotation += 3
         }
-        this.checkDead()
+        // this.checkDead()
+        this.checkCrash()
     }
 
 }

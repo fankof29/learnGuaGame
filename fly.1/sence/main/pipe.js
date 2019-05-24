@@ -16,7 +16,6 @@ class Pipes {
             this.els.push(p1)
             this.els.push(p2)    
         }
-        log('els',this.els)
     }
     static new(game) {
         var i = new this(game)
