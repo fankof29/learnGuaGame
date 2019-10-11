@@ -34,6 +34,7 @@ class sence extends GuaSence {
         }
     }
     update(){
+        
         super.update()
         if(this.checkGameEnd()) {
             this.gameEnd()
@@ -55,18 +56,8 @@ class sence extends GuaSence {
         g.registerAction('s', function () {
             self.play.moveDown();
         })
-    //     g.registerAction('j', function () {
-    //         self.play.fire();
-    //     })
+
     }
-    // addEnemys(){
-    //     let es = []
-    //     for(let i = 0; i < this.enemysNumber; i++ ){
-    //         let e = Enemy.new(this.game,'enemy')
-    //         this.addElements(e)
-    //         es.push(e)
-    //     }
-    //     this.enemys = es;
-    // }
+
 }
 

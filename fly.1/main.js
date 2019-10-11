@@ -11,13 +11,6 @@ var loadLevel = function(n,game) {
 }
     
 var imgs = {
-    // ball: './images/ball.png',
-    // block: './images/block.png',
-    // paddle: './images/paddle.png',
-    play: './images/play.png',
-    enemy:'./images/enemy.png',
-    bullet:'./images/bullet.png',
-    boom:'./images/boom.png',
     bird1:'./images/bird-1.png',
     bird2:'./images/bird-2.png',
     bird3:'./images/bird-3.png',
@@ -38,15 +31,11 @@ var _main = function(){
                 log('paused')
                 // 暂停功能
                 window.paused = !window.paused
-            } else if ('1234567'.includes(k)) {
-                // 为了 debug 临时加的载入关卡功能
-                blocks = loadLevel(Number(k))
-            }
+            } 
         })
 
         document.querySelector('#id-input-speed').addEventListener('input', function(event) {
             var input = event.target
-            // log(event, input.value)
             window.fps = Number(input.value) === 0? 1:Number(input.value)
         })
     }
@@ -58,7 +47,6 @@ var _main = function(){
     var g =new GanGame({
         imags:imgs,
         runCallback:function(g){
-            // var s = SenceTitle.new(g)
             var s = sence.new(g);
             g.runWithScene(s);
         }

@@ -3,7 +3,7 @@ class Pipes {
         this.g = game
         this.els = []
         this.distance = 200
-        this.pipiSpace = 200
+        this.pipiSpace = 150
         this.pipeNum = 3
         this.alive = true
         for(let i = 0; i < this.pipeNum; i++) {
@@ -16,14 +16,15 @@ class Pipes {
             this.els.push(p1)
             this.els.push(p2)    
         }
+
     }
     static new(game) {
         var i = new this(game)
         return i
     }
     resetPipePosition(p1, p2){
-        p1.y = randowBetween(100,200)
-        p2.y = (p1.h + this.pipiSpace - p1.y)
+        p1.y = randowBetween(-100, 0)
+        p2.y = p1.h + this.pipiSpace + p1.y;
     }
     update(){
         for(let p of this.els) {
@@ -39,7 +40,7 @@ class Pipes {
         for(let p of this.els) {
             content.save()
             var w2 = p.w /2
-            var h2 = p.w / 2
+            var h2 = p.h / 2
             content.translate(p.x + w2,p.y +h2)
             let sX = p.flipX? -1: 1
             let sY = p.flipY? -1: 1

@@ -95,11 +95,18 @@ class Blocks {
         levels[nowLeve - 1].push([x,y])
     }
     checkAddBlock(p) {
+
+        if(p.x < 0 || p.x > (400-p.w)){
+           return false;
+        }
+        if(p.y < 0 || p.y > (300-p.h)){
+            return false;
+         }
         for (let b of this.els ) {
             if(b.x == p.x && b.y == p.y) {
                 return false
             }
-            if ((this.rectIntersects(p, b) || this.rectIntersects(b, p))){
+            if ((rectIntersects(p, b) || rectIntersects(b, p))){
                 return false
             }
         }

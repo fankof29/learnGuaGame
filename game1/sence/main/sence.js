@@ -49,7 +49,10 @@ class sence extends GuaSence {
             let p = [x, y]
             let b =  Block.new(g,'block',p)
             self.blocks.pushBlock(b)
-
+            log("add Block X:",p[0])
+            log("add Block Y:",p[1])
+            log("block height",b.h)
+            log("block width",b.w)
         }
         
         var enableDrag = false;
