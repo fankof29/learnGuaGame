@@ -1,9 +1,9 @@
 class Bird extends guaAnimation {
     constructor(game,name){
         super(game,name)
-        this.x = 100
-        this.y = 100
-        this.speed = 20
+        this.x = 200
+        this.y = 300
+        this.speed = 8
         this.vy = 0
         this.gy = 10
         this.floot = 580
@@ -24,23 +24,12 @@ class Bird extends guaAnimation {
         }
 
     }
-    moveLeft() {
-        this.x -= this.speed
-        this.move()
-    }
-    moveRight() {
-        this.x += this.speed
-        this.move()
-    }
     moveUp() {
         this.rotation = -45
-        this.vy = -3
+        this.vy = -this.speed
         this.move()
     }
-    moveDown() {
-        this.y += this.speed
-        this.move()
-    }
+
     checkDead() {
         if(this.y == this.floot) {
             this.alive = false;
@@ -50,7 +39,6 @@ class Bird extends guaAnimation {
     checkPoint(e) {
         if (rectIntersects(this, e) || rectIntersects(e, this)) {
             this.alive = false
-            
         }
     }
     checkCrash() {
@@ -62,6 +50,9 @@ class Bird extends guaAnimation {
     }
     update() {
         super.update()
+        if(!window.start) {
+            return
+        }
         var h = this.floot
         this.y += this.vy
         this.vy += this.gy * 0.15

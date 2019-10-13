@@ -3,8 +3,9 @@ class SenceEnd extends GuaSence {
     constructor(game) {
         super(game)
         game.registerAction('r', function(){
-            var s = SenceTitle.new(game)
+            var s = new sence(game);
             game.replaceScene(s)
+            window.start = false;
         })
     }
     draw() {

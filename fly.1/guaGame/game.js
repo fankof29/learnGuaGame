@@ -40,6 +40,9 @@ class GanGame {
     drawImage(img) {
         this.content.drawImage(img.textrue, img.x, img.y)
     }
+    drawText(text, x, y) {
+        this.content.fillText(text, x, y)
+    }
     _EventInit() {
         var self = this;
         window.addEventListener('keydown', function (event) {

@@ -4,7 +4,6 @@ class guaAnimation {
         this.frames = []
         for(let i = 1; i < 4; i ++){
             let imgname = `${name}${i}`
-            log(imgname)
             var t = game.imageByName(imgname)
             this.frames.push(t)
         }
