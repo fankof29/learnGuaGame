@@ -6,7 +6,8 @@ class guaImage {
         this.y = 0;
         this.w = this.textrue.width;
         this.h = this.textrue.height;
-        this.alive = true
+        this.alive = true;
+        this.type = name
     }
     static new(game,name) {
         var i = new this(game,name)
@@ -16,6 +17,6 @@ class guaImage {
 
     }
     draw(){
-        
+        this.game.drawImage(this)
     }
 }

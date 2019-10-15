@@ -15,7 +15,7 @@ class GuaSence {
         for(let i = 0; i < this.elements.length; i++){
             let e = this.elements[i]
             if(e.alive){
-                this.game.drawImage(e)
+                e.draw()
             }
         }
         
