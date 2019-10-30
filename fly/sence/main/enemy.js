@@ -6,7 +6,7 @@ class Enemy extends guaImage {
     setUp() {
         this.speed = randowBetween(3, 10)
         this.x = randowBetween(0, 350)
-        this.y = -randowBetween(0, 200)
+        this.y = -randowBetween(0, 100)
         this.cooltime = 5
         this.fireTimes = 1
     }
@@ -44,12 +44,13 @@ class Enemy extends guaImage {
         }
         let x = this.w / 2 + this.x
         let y = this.y + 30
-        let bullet = Bullet.new(this.game, 'bullet','play')
+        let bullet = Bullet.new(this.game, 'bullet','play','enemy')
         bullet.speed = this.speed + 5
         bullet.transfrom = true
         bullet.x = x
         bullet.y = y
         this.sence.addElements(bullet)
+        this.sence.bullets.push(bullet)
     }
     
 }

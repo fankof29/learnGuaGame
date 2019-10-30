@@ -8,6 +8,6 @@ class SenceTitle extends GuaSence{
         })
     }
     draw(){
-        this.game.content.fillText('按 k 开始游戏', 100, 290)
+        this.game.content.fillText('按 k 开始游戏 wasd 上下左右移动 j 发射子弹', 100, 290)
     }
 }

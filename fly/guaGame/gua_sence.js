@@ -21,6 +21,9 @@ class GuaSence {
         
     }
     update() {
+        if (window.paused) {
+            return
+        }
         for(let i = 0; i < this.elements.length; i++){
             let e = this.elements[i]
             e.update()

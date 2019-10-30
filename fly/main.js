@@ -39,11 +39,11 @@ var _main = function(){
             }
         })
 
-        document.querySelector('#id-input-speed').addEventListener('input', function(event) {
-            var input = event.target
-            // log(event, input.value)
-            window.fps = Number(input.value) === 0? 1:Number(input.value)
-        })
+        // document.querySelector('#id-input-speed').addEventListener('input', function(event) {
+        //     var input = event.target
+        //     // log(event, input.value)
+        //     window.fps = Number(input.value) === 0? 1:Number(input.value)
+        // })
     }
     
     enableDebugMode(true)
@@ -53,8 +53,8 @@ var _main = function(){
     var g =new GanGame({
         imags:imgs,
         runCallback:function(g){
-            // var s = SenceTitle.new(g)
-            var s = sence.new(g);
+            var s = SenceTitle.new(g)
+            // var s = sence.new(g);
             g.runWithScene(s);
         }
     });

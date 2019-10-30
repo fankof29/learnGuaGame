@@ -4,6 +4,7 @@ class sence extends GuaSence {
     constructor(game) {
         super(game)
         this.enemys = []
+        this.bullets = []
         this.score = 0
         this.setUp()
         
@@ -19,8 +20,6 @@ class sence extends GuaSence {
         this.addEnemys()
         this.setInput()
         this.addElements(this.senceScore)
-
-        
     }
     isEnd(){
         if(!this.play.alive) {
@@ -32,7 +31,7 @@ class sence extends GuaSence {
         }
     }
     isWin() {
-        if(this.score === 5) {
+        if(this.score === this.enemysNumber) {
             let self = this;
         setTimeout(function(){
             let win = WinTitle.new(self.game)
@@ -51,7 +50,9 @@ class sence extends GuaSence {
         this.isEnd()
         this.senceScore.update(this.score)
         this.isWin()
-        // this.checkEnemys()
+        this.bullets = this.bullets.filter(e =>{
+            return e.alive == true;
+        })
     }
     setInput(){
         var g = this.game

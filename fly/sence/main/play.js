@@ -52,11 +52,11 @@ class Play extends guaImage {
             this.cooltime = 5
             let x = this.w / 2 + this.x - 1
             let y = this.y - 10
-            let bullet = Bullet.new(this.game, 'bullet','enemys')
+            let bullet = Bullet.new(this.game, 'bullet','enemys','play')
             bullet.x = x
             bullet.y = y
             this.sence.addElements(bullet)
-
+            this.sence.bullets.push(bullet)
         }
 
     }
